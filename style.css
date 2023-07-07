@@ -1,5 +1,5 @@
 body {
-
+  font-family: "Indie Flower", cursive;
 }
 h1 {
   color: #7c7c7c;
@@ -32,6 +32,7 @@ li {
 .input-search {
   display: block;
   width: 100%;
+  font-family: "Indie Flower", cursive;
   height: 38px;
   padding: 6px 12px;
   font-size: 16px;
@@ -55,6 +56,7 @@ li {
   padding: 5px 20px;
   font-size: 16px;
   line-height: 1.5;
+  font-family: "Indie Flower", cursive;
   border-radius: 4px;
 }
 
