@@ -4,6 +4,8 @@ let apiKey = "0479fec9478c6c9031d035f5c5efc126";
 
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   currentTemperature.innerHTML = temperature;
   weatherDescription.innerHTML = response.data.weather[0].main;
   document.querySelector(
@@ -12,6 +14,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )}km/h`;
+  console.log(response.data)
 
   let timeApiKey = "538eeab30025432fbe053ba84bb1ad3a";
   let latitude = response.data.coord.lat;

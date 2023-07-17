@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Parcel Sandbox</title>
+  <title>Weather app</title>
   <meta charset="UTF-8" />
 
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
@@ -18,7 +18,7 @@
       <div class="weather_application">
         <form class="search" id="search">
           <div class="search-block">
-            <input type="search" placeholder="Type a city..." class="input-search" id="search-input" />
+            <input type="search" placeholder="Type a city..." class="input-search" id="search-input" autocomplete="off"/>
 
             <div class="actions">
               <div>
@@ -40,12 +40,12 @@
         </ul>
         <div class="current-weather">
           <div class="current-temperature_container">
-            <!-- <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                class="weather-image"
-              /> -->
+      
+              <img src="" alt="" id="icon" class="weather-image">
             <div class="current-temperature">
+              
               <span class="temperature" id="temperature"></span>
+              
               <span class="units"><a href="#" id="celsius">°C </a>|
                 <a href="#" id="fahrenheit"> °F</a></span>
             </div>
