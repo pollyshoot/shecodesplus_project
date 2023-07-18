@@ -23,9 +23,23 @@ ul {
 }
 
 a {
-  color: #009999;
-  text-decoration: none;
+  color: #ec6e4c;
+text-decoration: none;
   font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active {
+text-decoration: none;
+cursor: default;
+color: #000;
+}
+
+.active:hover {
+  text-decoration: none;
 }
 li {
   font-size: 16px;
@@ -69,9 +83,9 @@ li {
   display: inline-block;
   font-weight: 400;
   color: #fff;
-  background-color:  #009999;
+  background-color:  #ec6e4c;
   ;
-  border-color: #009999;
+  border-color: #ec6e4c;
   ;
   text-align: center;
   padding: 5px 20px;
@@ -84,8 +98,8 @@ li {
 }
 
 .current-city-btn {
-  background-color: #e1b72e;
-  border-color: #e1b72e;
+  background-color: #48484a;
+  border-color: #48484a;
 }
 
 #current-city {
