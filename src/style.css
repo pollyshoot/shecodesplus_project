@@ -1,7 +1,7 @@
 body {
   /* font-family: "Indie Flower", cursive; */
   /* font-family: 'Mynerve', cursive; */
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   color: #000;
 }
 h1 {
@@ -11,9 +11,11 @@ h1 {
   margin: 0;
 }
 
+h4 {
+  margin: 0;
+}
 .container {
-
-width: 700px;
+  width: 700px;
 
   margin: 40px auto;
 }
@@ -24,7 +26,7 @@ ul {
 
 a {
   color: #ec6e4c;
-text-decoration: none;
+  text-decoration: none;
   font-weight: bold;
 }
 
@@ -33,9 +35,9 @@ a:hover {
 }
 
 .active {
-text-decoration: none;
-cursor: default;
-color: #000;
+  text-decoration: none;
+  cursor: default;
+  color: #000;
 }
 
 .active:hover {
@@ -66,7 +68,7 @@ li {
   width: 100%;
   /* font-family: "Indie Flower", cursive; */
   /* font-family: 'Mynerve', cursive; */
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   height: 38px;
   padding: 6px 12px;
   font-size: 16px;
@@ -83,17 +85,15 @@ li {
   display: inline-block;
   font-weight: 400;
   color: #fff;
-  background-color:  #ec6e4c;
-  ;
+  background-color: #ec6e4c;
   border-color: #ec6e4c;
-  ;
   text-align: center;
   padding: 5px 20px;
   font-size: 16px;
   line-height: 1.5;
   /* font-family: "Indie Flower", cursive; */
   /* font-family: 'Mynerve', cursive; */
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   border-radius: 4px;
 }
 
@@ -159,6 +159,23 @@ img {
 }
 
 .source {
-margin-top: 10px;
-font-size: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.day-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day-image {
+  width: 50px;
+  height: 50px;
 }

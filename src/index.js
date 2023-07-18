@@ -72,9 +72,7 @@ function getCurrentLocation(event) {
 let currentCityButton = document.querySelector("#current-city-btn");
 currentCityButton.addEventListener("click", getCurrentLocation);
 
-
 let celsiusTemperature = null;
-
 
 function toFahrenheit(event) {
   event.preventDefault();
@@ -86,10 +84,8 @@ function toFahrenheit(event) {
   fahrenheitLink.classList.add("active");
 }
 
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", toFahrenheit);
-
 
 function toCelsius(event) {
   event.preventDefault();
@@ -102,6 +98,5 @@ function toCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", toCelsius);
-
 
 getCityWeather("Kyiv");
