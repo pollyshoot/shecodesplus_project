@@ -1,6 +1,4 @@
 body {
-  /* font-family: "Indie Flower", cursive; */
-  /* font-family: 'Mynerve', cursive; */
   font-family: "Cutive Mono", monospace;
   color: #000;
 }
@@ -16,7 +14,6 @@ h4 {
 }
 .container {
   width: 700px;
-
   margin: 40px auto;
 }
 ul {
@@ -66,8 +63,6 @@ li {
 .input-search {
   display: block;
   width: 100%;
-  /* font-family: "Indie Flower", cursive; */
-  /* font-family: 'Mynerve', cursive; */
   font-family: "Cutive Mono", monospace;
   height: 38px;
   padding: 6px 12px;
@@ -91,10 +86,13 @@ li {
   padding: 5px 20px;
   font-size: 16px;
   line-height: 1.5;
-  /* font-family: "Indie Flower", cursive; */
-  /* font-family: 'Mynerve', cursive; */
   font-family: "Cutive Mono", monospace;
   border-radius: 4px;
+  transition: 150ms ease-in-out;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .current-city-btn {
@@ -175,7 +173,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-justify-content: center;
+  justify-content: center;
 }
 
 .day-image {
@@ -188,6 +186,6 @@ justify-content: center;
 }
 
 .forecast-temperature {
-text-align: center;
-font-size: 14px;
+  text-align: center;
+  font-size: 14px;
 }
