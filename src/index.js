@@ -89,6 +89,7 @@ function showForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class = "day-container">
+           <h4>${formatDay(day.dt)}</h4>
            <div><img src="http://openweathermap.org/img/wn/${
              day.weather[0].icon
            }.png" alt="" class="day-image"></div>
