@@ -22,7 +22,6 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )}km/h`;
-  console.log(response.data);
 
   let timeApiKey = "538eeab30025432fbe053ba84bb1ad3a";
   let latitude = response.data.coord.lat;
@@ -37,6 +36,10 @@ function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
 
   axios.get(timeApiUrl).then(showTime);
+
+  console.log(response.data);
+
+  getForecast(response.data.coord);
 }
 
 function getCityWeather(city) {
@@ -98,5 +101,55 @@ function toCelsius(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", toCelsius);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  return days[day];
+}
+let forecastElement = document.querySelector("#forecast");
+
+function showForecast(response) {
+
+  let forecast = response.data.daily;
+
+  let forecastHtml;
+  forecast.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml = document.createElement("div");
+      forecastHtml.innerHTML = `
+    <h4>${formatDay(day.dt)}</h4>
+    <div><img src="http://openweathermap.org/img/wn/11n@2x.png" alt="" class="day-image"></div>
+    <div>
+      <span class="forecast-temperature-max forecast-temperature">${Math.round(
+        day.temp.max
+      )}°C</span>
+      <span class="forecast-temperature-min forecast-temperature">${Math.round(
+        day.temp.min
+      )}°C</span>
+    </div>
+    `;
+    forecastHtml.classList.add("day-container");
+
+      forecastElement.append(forecastHtml);
+    }
+  });
+}
+
+function getForecast(coordinates) {
+  let apiKey = "0479fec9478c6c9031d035f5c5efc126";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
 
 getCityWeather("Kyiv");
