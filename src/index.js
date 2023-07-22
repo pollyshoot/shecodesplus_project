@@ -117,17 +117,19 @@ function formatDay(timestamp) {
 
   return days[day];
 }
-let forecastElement = document.querySelector("#forecast");
+
 
 function showForecast(response) {
 
   let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML =  `<div class="forecast">`;
 
-  let forecastHtml;
   forecast.forEach(function (day, index) {
     if (index < 5) {
-      forecastHtml = document.createElement("div");
-      forecastHtml.innerHTML = `
+      forecastHTML =
+        forecastHTML +
+`<div class = "day-container">
     <h4>${formatDay(day.dt)}</h4>
     <div><img src="http://openweathermap.org/img/wn/11n@2x.png" alt="" class="day-image"></div>
     <div>
@@ -138,10 +140,12 @@ function showForecast(response) {
         day.temp.min
       )}°C</span>
     </div>
+    </div>
     `;
-    forecastHtml.classList.add("day-container");
+    // forecastHtml.classList.add("day-container");
 
-      forecastElement.append(forecastHtml);
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
     }
   });
 }
