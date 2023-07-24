@@ -5,13 +5,22 @@ let apiKey = "0479fec9478c6c9031d035f5c5efc126";
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
 
-  let icon = document.querySelector("#icon");
-  icon.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  icon.setAttribute("alt", `${response.data.weather[0].description}`);
-
+  // let icon = document.querySelector("#icon");
+  // icon.setAttribute(
+  //   "src",
+  //   `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  // );
+  // icon.setAttribute("alt", `${response.data.weather[0].description}`);
+if (response.data.weather[0].main === "Rain") {
+  document.body.style.backgroundImage = 'url(https://rare-gallery.com/thumbs/845118-Element-Lightning-Thundercloud.jpg)';
+} else  if(response.data.weather[0].main === "Clear"){
+  document.body.style.backgroundImage = 'url(https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)';
+} else  if(response.data.weather[0].main === "Clouds"){
+  document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1525920980995-f8a382bf42c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmFpbnklMjBza3l8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60)';
+} else {
+  document.body.style.backgroundImage = 'url(https://www.pixelstalk.net/wp-content/uploads/images6/Broken-Wallpaper-HD-Free-download.jpg)';
+}
+console.log(response.data.weather[0].main)
   currentTemperature.innerHTML = temperature;
   weatherDescription.innerHTML = response.data.weather[0].main;
   document.querySelector(
